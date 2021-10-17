@@ -3,7 +3,10 @@ import "./Card.css";
 const LeagueCard = ({ leagues }) => {
     return (
         <div className="leagues-card">
-            <img src={leagues.logos.dark} className="Logo-league_image" />
+            <div >
+                <img src={leagues.logos.dark} className="Logo-league_image"  alt={leagues.name}/>
+            </div>
+            
             <div className="leagues-info">
                 <span className="league-info_name">
                     <p>nome: <strong>{leagues.name}</strong></p>
@@ -12,7 +15,7 @@ const LeagueCard = ({ leagues }) => {
                     abreviation:   <strong>  {leagues.abbr}</strong>
                 </span>
                 <span className="league-info_classificacao">
-                    <a href="">ver classificação</a>
+                    <a href="/" target="_blank" rel="noopener noreferrer">ver classificação</a>
 
                 </span>
 
