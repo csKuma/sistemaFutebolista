@@ -1,0 +1,31 @@
+.leagues-card{
+    border-radius: 8;
+    border: 1px solid #c3c3c3;
+    box-shadow: 0 2px 7px 0px rgba(0, 0, 0, 0.15);
+    display: flex;
+    padding: 15px;
+}
+
+.Logo-league_image{
+    max-width: 100px;
+}
+
+.leagues-info{
+    font-size: 16px;
+}
+.league-info_name{
+    font-size: 18px;
+}
+.league-info_classificacao{
+    border: 1px solid #3498db;
+    border-radius: 4px;
+    color: #3498db;
+    text-decoration: none;
+    padding: 8px 10px;
+    align-items: right;
+    margin-left: 350px;
+}
+
+a{
+    text-decoration: none;
+}
