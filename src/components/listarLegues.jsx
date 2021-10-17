@@ -1,6 +1,8 @@
 
 import React, { useEffect, useState } from "react";
 import Api from "../api";
+import LeagueCard from "./layout/card/LeagueCard";
+import "./ListarLeague.css";
 
 export default function ListarLeagues() {
     const [leagues, setLeague] = useState([])
@@ -14,10 +16,10 @@ export default function ListarLeagues() {
     }, [])
 
     return (
-        <div>{console.log(leagues)}
+        <div >
+            {console.log(leagues)}
             {leagues.map((leagues) => (
-                <li key={leagues.id}>{leagues.name} {leagues.id}
-                    <img src={leagues.logos.dark} /> </li>
+                < LeagueCard leagues = {leagues}/> 
             )
             )}
 

@@ -1,10 +1,10 @@
 
-import React from "react";
-import LeagueCard from "../../components/layout/card/LeagueCard";
+import React, { useEffect, useState } from "react";
+import Api from "../../api";
+import ListarLeagues from "../../components/listarLegues";
 
-
-const  Leagues = () => {
-    const LeaguesInfo={
+const Leagues = () => {
+    const LeaguesInfo = {
         "id": "arg.1",
         "name": "Argentine Liga Profesional de Fútbol",
         "slug": "argentine-liga-profesional-de-futbol",
@@ -13,9 +13,21 @@ const  Leagues = () => {
             "light": "https://a.espncdn.com/i/leaguelogos/soccer/500/1.png",
             "dark": "https://a.espncdn.com/i/leaguelogos/soccer/500-dark/1.png",
         }
-    
+
     };
 
+    const [leagues, setLeague] = useState([])
+    useEffect(() => {
+        Api
+            .get("/leagues")
+            .then(({ data }) => setLeague(data.data))
+            .catch((err) => {
+                console.error("ops! ocorreu um erro" + err);
+            });
+
+    }, [])
+
+    console.log(leagues)
 
 
 
@@ -26,7 +38,6 @@ const  Leagues = () => {
 
 
 
-    
 
 
     return (
@@ -34,9 +45,7 @@ const  Leagues = () => {
             maxWidth: 800,
             margin: '30px auto',
         }}>
-            < LeagueCard leagues = {LeaguesInfo} />
-            {/*<ListarSeason/>*/}
-            {/*<ListarLeagues></ListarLeagues>*/}
+            <ListarLeagues></ListarLeagues>
 
         </div>
     )

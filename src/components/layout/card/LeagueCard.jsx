@@ -4,7 +4,7 @@ const LeagueCard = ({ leagues }) => {
     return (
         <div className="leagues-card">
             <div >
-                <img src={leagues.logos.dark} className="Logo-league_image"  alt={leagues.name}/>
+                <img src={leagues.logos.light} className="Logo-league_image"  alt={leagues.name}/>
             </div>
             
             <div className="leagues-info">
