@@ -6,26 +6,31 @@
     box-shadow: 0 2px 7px 0px rgba(0, 0, 0, 0.15);
     display: flex;
     padding: 15px;
+    margin-bottom: 5px;
+    background-color: rgb(178, 183, 199);
 }
 
 .Logo-league_image{
     max-width: 180px;
+
 }
 
 .leagues-info{
-    font-size: 16px;
+    font-size: 14px;
+    margin-left: 50px;
 }
 .league-info_name{
-    font-size: 18px;
+    font-size: 13px;
 }
 .league-info_classificacao{
     border: 1px solid #3498db;
     border-radius: 4px;
-    color: #3498db;
+    color: #b0d8f3;
     text-decoration: none;
     padding: 8px 10px;
     align-items: right;
-    margin-left: 350px;
+    margin-left: 290px;
+    background-color: rgba(176, 216, 243, 0.527);
 }
 
 a{

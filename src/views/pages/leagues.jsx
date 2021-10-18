@@ -1,52 +1,43 @@
 
-import React, { useEffect, useState } from "react";
-import Api from "../../api";
+import React, {useEffect,useState} from "react";
 import ListarLeagues from "../../components/listarLegues";
+import UiConteiner from "../../components/ui/container/container";
+
+import './league.css'
+import Api from "../../api";
+
 
 const Leagues = () => {
-    const LeaguesInfo = {
-        "id": "arg.1",
-        "name": "Argentine Liga Profesional de Fútbol",
-        "slug": "argentine-liga-profesional-de-futbol",
-        "abbr": "Prim A",
-        "logos": {
-            "light": "https://a.espncdn.com/i/leaguelogos/soccer/500/1.png",
-            "dark": "https://a.espncdn.com/i/leaguelogos/soccer/500-dark/1.png",
-        }
+    const[leagues,setLeague]=useState('')
+    const[search,setSearch]=useState('')
 
-    };
+    const params={};
+    if(search){
+        params.name=search
+    }
 
-    const [leagues, setLeague] = useState([])
     useEffect(() => {
         Api
-            .get("/leagues")
+            .get("/leagues",{params})
             .then(({ data }) => setLeague(data.data))
             .catch((err) => {
                 console.error("ops! ocorreu um erro" + err);
             });
-
-    }, [])
-
-    console.log(leagues)
-
-
-
-
-
-
-
-
-
-
-
+    }, [search])
 
     return (
-        <div className="App" style={{
-            maxWidth: 800,
-            margin: '30px auto',
-        }}>
-            <ListarLeagues></ListarLeagues>
+        <div className="Leagues">
+            
+       <header className="league-header">
+                <h3>
+                    <h1><strong>SISTEMA fUTEBOLISTICO</strong></h1>
+                </h3>
+            </header>
 
+            <UiConteiner>
+            
+                <ListarLeagues />
+            </UiConteiner>
         </div>
     )
 }
