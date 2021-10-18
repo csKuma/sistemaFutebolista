@@ -1,41 +1,25 @@
 
-import React, {useEffect,useState} from "react";
+import React from "react";
 import ListarLeagues from "../../components/listarLegues";
-import UiConteiner from "../../components/ui/container/container";
-
+import UiConteiner from "../../components/ui/container/container"
 import './league.css'
-import Api from "../../api";
+
 
 
 const Leagues = () => {
-    const[leagues,setLeague]=useState('')
-    const[search,setSearch]=useState('')
-
-    const params={};
-    if(search){
-        params.name=search
-    }
-
-    useEffect(() => {
-        Api
-            .get("/leagues",{params})
-            .then(({ data }) => setLeague(data.data))
-            .catch((err) => {
-                console.error("ops! ocorreu um erro" + err);
-            });
-    }, [search])
 
     return (
         <div className="Leagues">
-            
-       <header className="league-header">
-                <h3>
-                    <h1><strong>SISTEMA fUTEBOLISTICO</strong></h1>
-                </h3>
+<UiConteiner>
+            <header className="league-header">
+                
+                    <h1>
+                        <strong>SISTEMA FUTEBOLISTICO</strong>
+                    </h1>
+                
             </header>
-
+            </UiConteiner>
             <UiConteiner>
-            
                 <ListarLeagues />
             </UiConteiner>
         </div>

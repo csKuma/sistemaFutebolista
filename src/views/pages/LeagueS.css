@@ -1,7 +1,15 @@
 .season-info{
  font-size: 20px;
+ 
+
 }
 .mensagem{
     font-size: 30px;
     color: red;
+}
+.print{
+    background-color: rgb(240, 239, 239);
+}
+.print-info{
+    color: black;
 }

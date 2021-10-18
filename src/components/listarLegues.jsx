@@ -5,14 +5,7 @@ import LeagueCard from "./layout/card/LeagueCard";
 
 
 export default function ListarLeagues() {
-    const [search, setSearch] = useState('')
     const [leagues, setLeague] = useState([])
-
-
-        const item = {
-
-
-        }
 
     useEffect(() => {
         Api
@@ -21,7 +14,7 @@ export default function ListarLeagues() {
             .catch((err) => {
                 console.error("ops! ocorreu um erro" + err);
             });
-    }, [search])
+    }, [])
 
     return (
         <div >

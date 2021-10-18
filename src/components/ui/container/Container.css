@@ -1,7 +1,12 @@
 .ui-Conteiner{
+    align-items: center;
+    border: 50px solid #eeeeee;
     max-Width: 630px;
-    margin:'30px auto';
-    margin-left:25%;
-background-color: rgb(251, 255, 255);
+    margin:50px;
+    margin-left:auto;
+    margin-right: auto;
+    
+    border-radius: 8px;
+background-color: rgb(235, 232, 232, o.15);
 
 }

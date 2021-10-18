@@ -9,6 +9,7 @@ import "../pages/LeagueS.css"
 const LeaguesSeason = () => {
   const { id } = useParams();
   const [idleeague, setIdleague] = useState([])
+  
 
   useEffect(() => {
 
@@ -21,21 +22,33 @@ const LeaguesSeason = () => {
   }, [id])
 
 
+  
+  
+
+
+
+
   return (
     <div className="season-info">
-      {console.log(idleeague)}
       <UiConteiner>
-        <div>
-         nome:{idleeague.name}
+        <div className="print">
+          
+          <div className="print-info">
+            <div>
+            nome: {idleeague.name}
+          </div>
+          <div>
+            season: {idleeague.season}
+          </div>
+          </div>
+          
+          <div className="mensagem"> desculpa, não foi possivel exibir a lista dos times
+        
+          </div>
+          
+
         </div>
-        <div>
-          id:{id}
-        </div>
-        <div>
-        season: {idleeague.season}
-        </div>
-        <div className="mensagem"> desculpa, não consegui listar os times por falta de conhecimento da linguagem</div>
-         <div className="mensagem"> consegui passar o id mas não consegui recolher os dados de standings</div>
+
       </UiConteiner>
 
     </div>
