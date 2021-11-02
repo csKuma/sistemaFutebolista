@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import UiConteiner from "../../components/ui/container/container";
 import "../pages/LeagueS.css"
 
-
+// este componente é responsavel por receber o id e passar como parametro no endpoint para fazer outro requerimento
 
 const LeaguesSeason = () => {
   const { id } = useParams();
@@ -15,21 +15,16 @@ const LeaguesSeason = () => {
 
     axios.get(`https://api-football-standings.azharimm.site/leagues/${id}/standings
       `)
-      .then(({ data }) => setIdleague(data.data))
+      // esta é uma das formas de passar o endpoint 
+      .then(({data}) => setIdleague(data.data))
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
       });
   }, [id])
 
-
-  
-  
-
-
-
-
   return (
     <div className="season-info">
+
       <UiConteiner>
         <div className="print">
           
