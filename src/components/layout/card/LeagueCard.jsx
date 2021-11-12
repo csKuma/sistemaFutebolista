@@ -23,6 +23,8 @@ const LeagueCard = ({ leagues }) => {
                 </span>
                 <div className="league-info_classificacao">
                     <Link to={`/listarSeason/${leagues.id}`}>ver classificação</Link> 
+    
+            
                 </div> {/* foi feito a passagem do id das ligas para o componente responsavel por receber o id e fazer outro requerimento a api*/}
             </div>
         </div>
